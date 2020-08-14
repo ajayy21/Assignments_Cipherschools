@@ -7,4 +7,4 @@ countchar=(a,b)=>{
     }
     return count
 }
-console.log(countchar("s","My name is Ajay singh shekhawat"))
+console.log(countchar("b","big fat bubble"))
