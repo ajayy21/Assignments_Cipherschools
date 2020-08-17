@@ -2,30 +2,30 @@
     {   
         "name":"strawberry",
         "price":"5",
-        "image":"./images/three.jpg",
+        "image":"./images/108756_strawberry.jpg",
         "type":"cake"
     },
     {   
         "name":"mango",
         "price":"16",
-        "image":"./images/two.jpg",
+        "image":"./images/mango.jpg",
         "type":"cake"
     },{
         "name":"Butter Scotch",
         "price":"10",
-        "image":"./images/one.jpg",
+        "image":"./images/Butterscotch-Cake.jpg",
         "type":"cake"
     },
     {   
         "name":"Vanilla",
         "price":"5",
-        "image":"./images/five.jpg",
+        "image":"./images/Vanilla-Cake-SQ.jpg",
         "type":"cupcake"
     },
     {   
         "name":"Cherry",
         "price":"16",
-        "image":"./images/six.jpg",
+        "image":"./images/chery cake.jpg",
         "type":"cupcake"
     },{
         "name":"Kaju katli",
