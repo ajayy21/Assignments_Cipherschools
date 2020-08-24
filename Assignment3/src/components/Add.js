@@ -1,47 +1,43 @@
-import React, { Component } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
+import React, { Component } from 'react'
+import './Form.css'
 
-export default class ButtonAppBar extends Component {
-    
-constructor(props){
-    super(props)
-    this.state={
-        clicked:false,
-        entry:''
+class Form extends Component{
+    state = {
+        id:0,
+        title:"",
+        details:"",
+        Instructor:""
+    }
+
+    handleonChange = (event) => {
+        this.setState({[event.target.id]:event.target.value})
+    }
+    handleSubmit = (event) => {
+         event.preventDefault();
+      //  console.log(this.state);
+        this.props.addcourse(this.state);
+        this.setState({
+            id:0,
+            title:"",
+            details:"",
+            Instructor:""
+        })
+    }
+    render(){
+        return(
+            <form className="basic" onSubmit={this.handleSubmit}>
+                <label htmlFor="title">Title:</label>
+                <input type="text" id="title" placeholder="enter you Title" onChange={this.handleonChange} value={this.state.title}></input><br></br>
+
+                <label htmlFor="details">Details:</label>
+                <input type="text" id="details" placeholder="enter you Details" onChange={this.handleonChange} value={this.state.details}></input><br></br>
+
+                <label htmlFor="Instructor">Tags:</label>
+                <input type="text" id="Instructor" placeholder="Tags" onChange={this.handleonChange} value={this.state.Instructor}></input><br></br>
+                <button type="submit" value="submit">submit</button>
+            </form>
+        )
     }
 }
 
-handlechange=()=>{
-    this.setState({clicked:true})
-}
-write=(event)=>{
-    this.setState({entry : event.target.value})
-    
-}
-save=()=>{
-    this.setState({clicked:false})
-    this.props.additem(this.state.entry)
-    
-}
-render(){
-  return (
-  <div >
-    <br/><br/>
-    <IconButton aria-label="add" onClick={this.handlechange}>
-        <AddIcon size='large' color ='secondary'/>
-    </IconButton>
-    {this.state.clicked ?
-    <>
-        <TextField id="standard-basic" label="Enter your chore Here" onChange={this.write}/>
-        <Button variant="contained" color="primary" size="large" startIcon={<SaveIcon />} onClick={this.save}/>
-    </>    
-    :
-        <>ADD NEW ITEMS</>
-    }
-    
-  </div>)}
-}
+export default Form;
